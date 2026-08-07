@@ -7,6 +7,8 @@ requires-python = ">=3.12"
 dependencies = [
     "arviz>=1.2.0",
     "bambi>=0.19.0",
+    "ipykernel>=7.3.0",
+    "ipywidgets>=8.1.8",
     "matplotlib>=3.11.1",
     "numpy>=2.4.6",
     "nutpie>=0.16.11",
@@ -16,6 +18,13 @@ dependencies = [
     "pymc-bart>=0.12.0",
     "scipy>=1.18.0",
 ]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["const", "utils"]
 
 [dependency-groups]
 dev = [

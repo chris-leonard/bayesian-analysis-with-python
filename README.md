@@ -23,6 +23,14 @@ uv add <pkg>     # add a dependency
 
 Export notebooks to PDF with `make pdf`.
 
+### System dependencies
+
+Rendering PyMC models with `pm.model_to_graphviz` needs the Graphviz system binary, which `uv` does not manage:
+
+```bash
+sudo apt-get install -y graphviz
+```
+
 ## Organisation
 
 ```
@@ -30,8 +38,8 @@ const.py         # project-wide constants (paths, shared config)
 utils.py         # shared helper functions
 data/            # datasets
 chapter-N/       # one folder per book chapter, each with:
-    notes.ipynb      # notes on the chapter
-    exercises.ipynb  # exercise solutions
+    chapter-N-notes.ipynb      # notes on the chapter
+    chapter-N-exercises.ipynb  # exercise solutions
 ```
 
 The core stack is PyMC, ArviZ, and Bambi; see `pyproject.toml` for the full list.
