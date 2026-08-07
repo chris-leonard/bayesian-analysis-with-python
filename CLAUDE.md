@@ -19,6 +19,7 @@ In markdown (`.md`) files:
 ## Python
 
 - Write concise code and avoid unnecessary comments
+- Prefer `pathlib` over `os.path` for paths
 
 ## Plots
 
