@@ -21,9 +21,6 @@ uv sync          # create/update the environment from the lockfile
 uv add <pkg>     # add a dependency
 ```
 
-Notebooks are run natively in VSCode (select the project's `.venv` as the kernel).
-There's no need to launch a separate Jupyter server.
-
 Export notebooks to PDF with `make pdf`.
 
 ## Organisation
