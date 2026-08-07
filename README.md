@@ -4,22 +4,34 @@ My notes and exercise solutions for [*Bayesian Analysis with Python* (3rd editio
 
 The book's own code repository is [aloctavodia/BAP3](https://github.com/aloctavodia/BAP3).
 
+## Goal
+
+Work through the book chapter by chapter, writing up notes and solving the exercises.
+The aim is understanding, not just running code — notes explain the reasoning, exercises apply it.
+
 Solutions are written in Jupyter notebooks.
 GitHub and Jupyter render LaTeX differently, so I recommend reading the `.pdf` exports rather than the `.ipynb` files.
 
-## Setup
+## Tooling
 
-This project uses [uv](https://docs.astral.sh/uv/).
-
-```bash
-uv sync                       # create the environment from the lockfile
-uv run jupyter lab            # launch JupyterLab
-```
-
-Prefix any command with `uv run` to run it in the project environment — there's no environment to activate manually.
-
-## Exporting notebooks to PDF
+This project uses [uv](https://docs.astral.sh/uv/) for environment and dependency management.
 
 ```bash
-make pdf                      # export all notebooks to PDF
+uv sync          # create/update the environment from the lockfile
+uv add <pkg>     # add a dependency
 ```
+
+Export notebooks to PDF with `make pdf`.
+
+## Organisation
+
+```
+const.py         # project-wide constants (paths, shared config)
+utils.py         # shared helper functions
+data/            # datasets
+chapter-N/       # one folder per book chapter, each with:
+    notes.ipynb      # notes on the chapter
+    exercises.ipynb  # exercise solutions
+```
+
+The core stack is PyMC, ArviZ, and Bambi; see `pyproject.toml` for the full list.
